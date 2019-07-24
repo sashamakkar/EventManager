@@ -14,74 +14,82 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Find events taking place all over India!
-        \nWe ensure you wont miss out on any exciting gatherings
-        happening in our country!"
-        android:textColor="#1cbe11"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="74dp"
-        android:layout_marginTop="60dp"/>
+    <!--<TextView-->
+        <!--android:id="@+id/info"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Find events taking place all over India!-->
+        <!--\nWe ensure you wont miss out on any exciting gatherings-->
+        <!--happening in our country!"-->
+        <!--android:textColor="#1cbe11"-->
+        <!--tools:layout_editor_absoluteX="55dp"-->
+        <!--tools:layout_editor_absoluteY="74dp"-->
+        <!--android:layout_marginTop="60dp"/>-->
 
 
-    <TextView
-        android:id="@+id/welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome To Event Manager!"
-        android:textColor="#1b2ad7"
-        android:textSize="28dp"
-        tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="16dp"
-        android:layout_gravity="center_horizontal"/>
+    <!--<TextView-->
+        <!--android:id="@+id/welcome"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:text="Welcome To herald!"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="28dp"-->
+        <!--tools:layout_editor_absoluteX="65dp"-->
+        <!--tools:layout_editor_absoluteY="16dp" />-->
+
 
     <Button
         android:id="@+id/addEvent"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="450dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="430dp"
         android:text="Add Event"
-        android:textColor="#8911aa"
-        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:backgroundTint="#ffc3d8"
         tools:layout_editor_absoluteX="131dp"
         tools:layout_editor_absoluteY="467dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextAddEvent"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:inputType="text"
-        android:text="Or add your event here!"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="411dp"
-        android:layout_marginTop="400dp"/>
-
-
-    <EditText
-        android:id="@+id/editTextSearchEvent"
-        android:layout_width="match_parent"
+        android:layout_width="42dp"
         android:layout_height="wrap_content"
-        android:text="      Enter event (Music, Art, Theatre, Concert)"
-        tools:layout_editor_absoluteX="-30dp"
-        tools:layout_editor_absoluteY="173dp"
-        android:layout_marginTop="200dp" />
+        android:layout_marginTop="400dp"
+        android:inputType="text"
+        android:text=""
+        app:layout_anchor="@+id/addEvent"
+        app:layout_anchorGravity="top|center"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+
+    <TextView
+        android:id="@+id/editTextSearchEvent"
+        android:layout_width="62dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text=""
+        app:layout_anchor="@+id/search"
+        app:layout_anchorGravity="top|center"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="10dp" />
 
 
     <Button
         android:id="@+id/search"
-        android:layout_width="100dp"
-        android:layout_height="79dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="275dp"
         android:text="Search Event"
-        android:textColor="#8911aa"
-        android:textSize="16sp"
+        android:backgroundTint="#ffc3d8"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="220dp"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="250dp"/>
+        tools:layout_editor_absoluteY="220dp" />
 
     <TextView
         android:id="@+id/contact"
@@ -89,10 +97,19 @@
         android:layout_height="wrap_content"
         android:text="Contact us"
         android:textSize="15dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#ffc3d8"
         tools:layout_editor_absoluteX="247dp"
         tools:layout_editor_absoluteY="607dp"
         android:layout_marginStart="235dp"
-        android:layout_marginTop="600dp"/>
+        android:layout_marginTop="605dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="403dp"
+        android:layout_height="659dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/herald" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

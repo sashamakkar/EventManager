@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Event Details"
-            android:textColor="#05d43c"
+            android:textColor="#F48FB1"
             android:id="@+id/id"
             android:textSize="30dp"/>
     </LinearLayout>

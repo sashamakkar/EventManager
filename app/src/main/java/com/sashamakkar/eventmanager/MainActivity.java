@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     TextView welcome, info, contact, name;
 
     Button search, addEvent;
-    EditText editTextSearchEvent, editTextAddEvent;
+    TextView editTextSearchEvent, editTextAddEvent;
     DatabaseReference rootref;
 
     @Override
@@ -41,13 +41,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        welcome = (TextView) findViewById(R.id.welcome);
+//        welcome = (TextView) findViewById(R.id.welcome);
         info = (TextView) findViewById(R.id.info);
         contact = (TextView) findViewById(R.id.contact);
         addEvent = (Button) findViewById(R.id.addEvent);
         search = (Button) findViewById(R.id.search);
-        editTextSearchEvent = (EditText) findViewById(R.id.editTextSearchEvent);
-        editTextAddEvent = (EditText) findViewById(R.id.editTextAddEvent);
+        editTextSearchEvent = (TextView) findViewById(R.id.editTextSearchEvent);
+        editTextAddEvent = (TextView) findViewById(R.id.editTextAddEvent);
         rootref= FirebaseDatabase.getInstance().getReference();
 
         addEvent.setOnClickListener(new View.OnClickListener()
