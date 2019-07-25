@@ -1,7 +1,9 @@
 package com.sashamakkar.eventmanager;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -11,7 +13,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventDetails {
+public class EventDetails extends AppCompatActivity {
 
     private FirebaseDatabase mDatabase;
     private DatabaseReference mRef;
@@ -47,6 +49,16 @@ public class EventDetails {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+    }
+
+    public void addEvent(Event event, final DataStatus dataStatus){
+        String key = mRef.push().getKey();
+        mRef.child(key).setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                dataStatus.DataIsInserted();
             }
         });
     }

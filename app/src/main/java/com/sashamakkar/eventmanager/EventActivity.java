@@ -17,9 +17,13 @@ public class EventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         recyclerView = findViewById(R.id.recyclerViewEvents);
 
+
+
         new EventDetails().readEvent(new EventDetails.DataStatus() {
             @Override
             public void DataIsLoaded(List<Event> events, List<String> keys) {
+
+//                setContentView(findViewById(R.id.recyclerViewEvents));
                 new RecyclerViewConfig().setConfig(recyclerView, EventActivity.this, events, keys);
             }
 

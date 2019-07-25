@@ -24,6 +24,7 @@
         <activity android:name=".AddEvents"/>
         <activity android:name=".SubmitEvent"/>
         <activity android:name=".EventActivity"/>
+        <activity android:name=".EventDetails"/>
     </application>
 
 </manifest>

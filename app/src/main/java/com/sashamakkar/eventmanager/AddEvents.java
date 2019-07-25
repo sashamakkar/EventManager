@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class AddEvents extends AppCompatActivity {
 
@@ -58,19 +60,41 @@ public class AddEvents extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//
 
-//
-//                FirebaseAuth auth= FirebaseAuth.getInstance();
-//                Map<String,Object> map = new HashMap<String, Object>();
-//
-//                String addevent = entername.getText().toString();
-//                map.put("name",addevent);
-//
-//
-//                String Type = entertype.getText().toString();
-//                map.put("type",Type);
-//
-//                rootref.updateChildren(map);
+                Event event = new Event();
+
+                event.setName(entername.getText().toString());
+                event.setType(entertype.getText().toString());
+                event.setVenue(entervenue.getText().toString());
+                event.setAbout(enterabout.getText().toString());
+                event.setAttendees(rb.getText().toString());
+                event.setDate(enterdate.getText().toString());
+                event.setDuration(enterduration.getText().toString());
+                event.setSpeciality(enterspecial.getText().toString());
+
+                new EventDetails().addEvent(event, new EventDetails.DataStatus() {
+                    @Override
+                    public void DataIsLoaded(List<Event> events, List<String> keys) {
+
+                    }
+
+                    @Override
+                    public void DataIsInserted() {
+                        Toast.makeText(AddEvents.this, "Event Added", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void DataIsUpdated() {
+
+                    }
+
+                    @Override
+                    public void DataIsDeleted() {
+
+                    }
+                });
+
                 HashMap<String, String> ev = new HashMap<String, String>();
 
 
@@ -93,14 +117,14 @@ public class AddEvents extends AppCompatActivity {
                 String Duration = enterduration.getText().toString();
 
 
-                ev.put("About",About);
-                ev.put("Attendees",Attendees);
-                ev.put("Date",Date);
-                ev.put("Duration",Duration);
-                ev.put("Name",Name);
-                ev.put("Speciality",Speciality);
-                ev.put("Type",Type);
-                ev.put("Venue", Venue);
+                ev.put("about",About);
+                ev.put("attendees",Attendees);
+                ev.put("date",Date);
+                ev.put("duration",Duration);
+                ev.put("name",Name);
+                ev.put("speciality",Speciality);
+                ev.put("type",Type);
+                ev.put("venue", Venue);
 
                 newRef.setValue(ev);
 

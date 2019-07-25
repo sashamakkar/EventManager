@@ -53,22 +53,17 @@ public class ShowEvents extends AppCompatActivity {
         setContentView(R.layout.activity_show_events);
 
         nametv = (TextView) findViewById(R.id.name);
-
-        // Spinner element
         spinner = (Spinner) findViewById(R.id.spinner);
 
-        // Spinner click listener
         spinner.setOnItemSelectedListener(new custom());
 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-        // Get a reference to our posts
-
         DatabaseReference ref = database.getInstance().getReference();
 
         final HashMap<String,String> ev = new HashMap<>();
-// Attach a listener to read the data at our posts reference
+
+
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -77,13 +72,17 @@ public class ShowEvents extends AppCompatActivity {
                     String x = String.valueOf(t.getChildrenCount());
                     for(DataSnapshot tt : t.getChildren())
                     {
-                        String q = "";
-                        if (tt.getKey().toString().equals("Name")) {
-                            q = tt.getValue().toString();
-                            Toast.makeText(getApplicationContext(), "Name " + q, Toast.LENGTH_SHORT);
-                            String s = q;
-                            categories.add(s);
+                        String y = String.valueOf(t.getChildrenCount());
+                        for(DataSnapshot ttt : tt.getChildren()){
+                            String q = "";
+                            if (ttt.getKey().toString().equals("name")) {
+                                q = ttt.getValue().toString();
+                                Toast.makeText(getApplicationContext(), "name " + q, Toast.LENGTH_SHORT);
+                                String s = q;
+                                categories.add(s);
+                            }
                         }
+
                     }
                 }
                 set(categories);
@@ -105,7 +104,7 @@ public class ShowEvents extends AppCompatActivity {
                 String s = getEvent();
                 Toast.makeText(getApplicationContext(), "redirecting : " + s, Toast.LENGTH_LONG).show();
                 System.out.print("redirecting   " + s);
-                Intent i = new Intent(ShowEvents.this, EventDetails.class);
+                Intent i = new Intent(ShowEvents.this, EventActivity.class);
                 i.putExtra("Event",s);
                 startActivity(i);
 
