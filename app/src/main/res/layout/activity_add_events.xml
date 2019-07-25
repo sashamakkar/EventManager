@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter  event type"
+            android:text="Enter Event Type"
             android:id="@+id/type"/>
 
         <EditText
@@ -51,7 +51,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter  event duration"
+            android:text="Enter Event Duration"
             android:id="@+id/duration"/>
 
         <EditText
@@ -64,7 +64,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Event name"
+            android:text="Enter Event Name"
             android:id="@+id/name"/>
         <EditText
             android:layout_width="match_parent"
@@ -86,7 +86,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About the event "
+            android:text="About the Event "
             android:id="@+id/about"/>
         <EditText
             android:layout_width="match_parent"
@@ -99,9 +99,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Anything special about this event\n
-        (Like a special guest appearance, stars, band, \n
-        or like some food specialaities)"
+            android:text="Enter Special Guests (if any)"
             android:id="@+id/specialities"/>
         <EditText
             android:layout_width="match_parent"

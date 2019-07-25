@@ -48,7 +48,7 @@ public class SubmitEvent extends AppCompatActivity {
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
                 // Log.w(TAG, "Failed to read value.", error.toException());
-                System.out.println ("Failed t oread the value ");
+                System.out.println ("Failed to read the value ");
             }
         });
 
