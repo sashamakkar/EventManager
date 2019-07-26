@@ -102,8 +102,8 @@ public class ShowEvents extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String s = getEvent();
-                Toast.makeText(getApplicationContext(), "redirecting : " + s, Toast.LENGTH_LONG).show();
-                System.out.print("redirecting   " + s);
+                Toast.makeText(getApplicationContext(), "Redirecting : " + s, Toast.LENGTH_LONG).show();
+                System.out.print("Redirecting   " + s);
                 Intent i = new Intent(ShowEvents.this, EventActivity.class);
                 i.putExtra("Event",s);
                 startActivity(i);

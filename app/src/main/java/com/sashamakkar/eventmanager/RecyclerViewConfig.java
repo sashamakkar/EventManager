@@ -2,7 +2,9 @@ package com.sashamakkar.eventmanager;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,10 +17,14 @@ public class RecyclerViewConfig {
 
     private Context mContext;
     private EventAdapter eventAdapter;
+
+
+
     public void setConfig(RecyclerView recyclerView, Context context, List<Event> events, List<String> keys){
         mContext = context;
         eventAdapter = new EventAdapter(events, keys);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
+//        recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(eventAdapter);
     }
 
@@ -63,7 +69,7 @@ public class RecyclerViewConfig {
 
     }
 
-    class EventAdapter extends RecyclerView.Adapter<EventItemView>{
+    class EventAdapter extends RecyclerView.Adapter<RecyclerViewConfig.EventItemView>{
 
         private List<Event> mEventList;
         private List<String> mKeys;
